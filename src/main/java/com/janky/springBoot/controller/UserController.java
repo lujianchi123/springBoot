@@ -1,17 +1,12 @@
 package com.janky.springBoot.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import javax.annotation.Resource;
-
+import com.janky.springBoot.domain.User;
+import com.janky.springBoot.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.janky.springBoot.domain.User;
-import com.janky.springBoot.service.UserService;
+import javax.annotation.Resource;
+import java.util.List;
 
 @RestController
 @RequestMapping("/user")
