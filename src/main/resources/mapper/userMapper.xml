@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.janky.springBoot.dao.UserMapper">
+	<!--<resultMap id="BaseResultMap" type="User">
+        <result column="id" jdbcType="INTEGER" property="id" />
+		<result column="user_name" jdbcType="VARCHAR" property="userName" />
+		<result column="user_age" jdbcType="INTEGER" property="userAge" />
+	</resultMap>-->
+
+    <select id="getAll" resultType="User">
+        select * from user_info
+    </select>
+    
+    <select id="getOne" resultType="User" parameterType="Long">
+        select * from user_info t where t.id = #{id}
+    </select>
+    
+    <!-- <insert id="saveUsers">
+        insert into user_info(user_name, user_age) values    
+        <foreach collection="users" item="user" separator=",">
+            (#{user.username}, #{user.age}
+            <trim prefix="," suffix=")">
+                <choose>
+                    <when test="user.enterpriseId != null and user.enterpriseId != 0">
+                        #{user.enterpriseId}
+                    </when>
+                    <otherwise>
+                        null
+                    </otherwise>
+                </choose>
+            </trim>
+        </foreach>
+    </insert> -->
+</mapper>
