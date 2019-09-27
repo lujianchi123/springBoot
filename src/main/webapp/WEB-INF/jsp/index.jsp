@@ -26,19 +26,29 @@
 </head>
 <body>
 	<div id="app">
-		<button @click="getUserList">查询</button>
-		<button>增加</button>
-		<button>修改</button>
-		<table style="1px solid #9E9E9E">
-			<tr style="1px solid #9E9E9E">
-				<th width="100">姓名</th>
-				<th>年龄</th>
-			</tr>
-			<tr style="1px solid #9E9E9E" v-for="user in userList">
-				<td width="100" align="center">{{ user.userName }}</td>
-				<td width="100" align="center">{{ user.userAge }}</td>
-			</tr>
-		</table>
+		<div>
+			<button @click="getUserList" style="float: left;margin: 0px 10px;">查询</button>
+			<form action="/addUserPage" method="get" style="margin-left: 10px;">
+				<button type="submit">增加</button>
+			</form>
+		</div>
+		<div>
+			<table style="1px solid #9E9E9E">
+				<tr style="1px solid #9E9E9E">
+					<th width="100">姓名</th>
+					<th>年龄</th>
+					<th>操作</th>
+				</tr>
+				<tr style="1px solid #9E9E9E" v-for="user in userList">
+					<td width="100" align="center">{{ user.userName }}</td>
+					<td width="100" align="center">{{ user.userAge }}</td>
+					<td width="100" align="center">
+						<a href="javascript:void(0)" @click="editUserPage(user.id)">编辑</a>
+						<a href="javascript:void(0)" @click="delUser(user.id)">删除</a>
+					</td>
+				</tr>
+			</table>
+		</div>
 	</div>
 </body>
 
@@ -62,7 +72,13 @@ new Vue({
     				_self.userList = rs;
     			}
     		});
-    	}
+    	},
+        editUserPage(userId) {
+    	    console.log(userId)
+		},
+		delUser(userId) {
+            console.log(userId)
+		}
     }
 })
 </script>

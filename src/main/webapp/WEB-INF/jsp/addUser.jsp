@@ -27,7 +27,7 @@
 	<form id="addForm">
 		姓名：<input type="text" id="userName" name="name"><br>
 		年龄：<input type="text" id="age" name="age"><br>
-		<a href="javascripr:void(0)" onclick="save()">提交</a>
+		<button href="javascript:void(0)" onclick="save()">提交</button>
 	</form>
 </body>
 <!-- 加载JS脚本 -->
