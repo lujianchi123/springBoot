@@ -23,6 +23,17 @@
   <script src="https://cdn.pure.fastadmin.net/assets/js/respond.min.js"></script>
 <![endif]-->
 
+    <style>
+        .mytable{
+            border:1px solid #9E9E9E;
+        }
+        .mytable td{
+            border:1px solid #9E9E9E;
+        }
+        .mytable th{
+            border:1px solid #9E9E9E;
+        }
+    </style>
 </head>
 <body>
 	<div id="app">
@@ -33,13 +44,13 @@
 			</form>
 		</div>
 		<div>
-			<table style="1px solid #9E9E9E">
-				<tr style="1px solid #9E9E9E">
+			<table class="mytable">
+				<tr>
 					<th width="100">姓名</th>
 					<th>年龄</th>
 					<th>操作</th>
 				</tr>
-				<tr style="1px solid #9E9E9E" v-for="user in userList">
+				<tr v-for="user in userList">
 					<td width="100" align="center">{{ user.userName }}</td>
 					<td width="100" align="center">{{ user.userAge }}</td>
 					<td width="100" align="center">
